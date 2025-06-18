@@ -35,7 +35,7 @@
                         <i class="fas fa-code"></i>
                     </div>
                     <h3>Développement Sur Mesure</h3>
-                    <p>Applications logiciel, web et mobiles personnalisées pour votre entreprise</p>
+                    <p>Applications logiciel, web et mobiles personnalisées pour votre entreprise 1</p>
                     <a href="services.html#dev" class="btn-link">En savoir plus →</a>
                 </div>
                 
