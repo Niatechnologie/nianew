@@ -13,8 +13,8 @@
 <script src="/greensockjs/src/minified/plugins/MorphSVGPlugin.min.js"></script>
 <script src="/greensockjs/src/minified/plugins/DrawSVGPlugin.min.js"></script>
 <script src="/gs.js"></script>
-<script src="/lib/script_tech.js"></script>
-<script src="/lib/script.js"></script>
+<script src="/script_tech.js"></script>
+<script src="/script.js"></script>
 </svelte:head>
 <main>
 
