@@ -2,16 +2,17 @@
 	import {onMount} from 'svelte';
 	import { run } from 'svelte/legacy';
 	import { fade, fly } from 'svelte/transition'; // Importer des transitions prédéfinies
-    import { page } from '$app/stores'; // Accéder au store de navigation
+  import { page } from '$app/stores'; // Accéder au store de navigation
 	import '../app.css';
 	import Footer from './footer.svelte';
-    import Header from './header.svelte';
+  import Header from './header.svelte';
 	
 	let { children } = $props();
 
 let currentIndex = $state(0);
  // Variables pour gérer les transitions
 let currentKey = $state(null);
+
 let itemsToShow = $state(2);
 let autoplayInterval;
 let carouselContainer;
@@ -142,7 +143,7 @@ function stopAutoSlide() {
           }
        });
 
-          // Construire l'URL complète
+      // Construire l'URL complète
       const fullUrl = $derived(`${$page.url.origin}${$page.url.pathname}`);
       const fullUrl2 = $derived($page.url.href);
       function showUrl() {
