@@ -167,7 +167,7 @@
     flex: 1;
     position: relative;
     height: 400px;
-    background: url('../img/training.jpg') center/cover;
+    background: url('/img/training.jpg') center/cover;
     border-radius: 10px;
     box-shadow: var(--shadow-xl);
 }
