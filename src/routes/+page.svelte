@@ -120,7 +120,7 @@
               <p>Meta-Framework</p>
             </div>
             <div class="tech-card">
-                <img src="../src/lib/img/laravel.svg" alt="Laravel" />
+                <img src="/img/laravel.svg" alt="Laravel" />
                 <h3>Laravel</h3>
                 <p>Backend</p>
               </div>
@@ -168,7 +168,7 @@
     flex: 1;
     position: relative;
     height: 400px;
-    background: url('./src/lib/img/training.jpg') center/cover;
+    background: url('./img/training.jpg') center/cover;
     border-radius: 10px;
     box-shadow: var(--shadow-xl);
 }
