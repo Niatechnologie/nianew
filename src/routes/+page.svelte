@@ -1,7 +1,15 @@
 <script>
     import Caroussel from "./caroussel.svelte";
+    import { browser } from '$app/environment';
     // import formationimage from "$lib/img/training.jpg";
     //  import zod from "$lib/img/zod.svg";
+    import '$lib/greensockjs/src/minified/TweenMax.min.js';
+    import '$lib/greensockjs/src/minified/TweenLite.min.js';
+    import '$lib/greensockjs/src/minified/plugins/MorphSVGPlugin.min.js';
+    import '$lib/greensockjs/src/minified/plugins/DrawSVGPlugin.min.js';
+    import '$lib/gs.js';
+    import '$lib/script_tech.js';
+    import '$lib/script.js';
    
 </script>
 <svelte:head>
