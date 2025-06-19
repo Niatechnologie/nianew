@@ -1,5 +1,6 @@
 <script>
-    import logo from '$lib/img/logo_nia.svg'
+    import { page } from '$app/stores'; // Accéder au store de navigation
+    import logo from '$lib/img/logo_nia.svg';
 </script>
 
 <!-- Navigation Glassmorphisme -->
@@ -11,14 +12,17 @@
                 </a>
             </div>
             <nav>
-                <ul class="nav-links">
-                    <li><a href="/" class="active">Accueil</a></li>
-                    <li><a href="/solutions">Nos Solutions</a></li>
-                    <li><a href="/formations">Formations</a></li>
-                    <li><a href="/portfolio">Portfolio</a></li>
-                    <li><a href="/qui-sommes-nous">À propos</a></li>
-                    <li><a href="/contactez-nous">Contact</a></li>   
-                </ul>
+                 <!-- Menu de navigation -->
+                <nav>
+                    <ul class="nav-links">
+                        <li><a href="/" class:active={$page.url.pathname === '/'}>Accueil</a></li>
+                        <li><a href="/solutions" class:active={$page.url.pathname === '/solutions'}>Nos Solutions</a></li>
+                        <li><a href="/formations" class:active={$page.url.pathname === '/formations'}>Formations</a></li>
+                        <li><a href="/portfolio" class:active={$page.url.pathname === '/portfolio'}>Portfolio</a></li>
+                        <li><a href="/qui-sommes-nous" class:active={$page.url.pathname === '/qui-sommes-nous'}>À propos</a></li>
+                        <li><a href="/contactez-nous" class:active={$page.url.pathname === '/contactez-nous'}>Contact</a></li>
+                    </ul>
+                </nav>
                 <div class="hamburger">
                     <span></span>
                     <span></span>

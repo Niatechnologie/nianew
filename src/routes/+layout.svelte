@@ -1,18 +1,15 @@
 <script>
-	import {onMount} from 'svelte';
-	import { run } from 'svelte/legacy';
-	import { fade, fly } from 'svelte/transition'; // Importer des transitions prédéfinies
-  import { page } from '$app/stores'; // Accéder au store de navigation
-	import '../app.css';
-	import Footer from './footer.svelte';
-  import Header from './header.svelte';
-	
-	let { children } = $props();
+import {onMount} from 'svelte';
+import { run } from 'svelte/legacy';
+import { fade, fly } from 'svelte/transition'; // Importer des transitions prédéfinies
+import { page } from '$app/stores'; // Accéder au store de navigation
+import '../app.css';
+import Footer from './footer.svelte';
+import Header from './header.svelte';
+
+let { children } = $props();
 
 let currentIndex = $state(0);
- // Variables pour gérer les transitions
-let currentKey = $state(null);
-
 let itemsToShow = $state(2);
 let autoplayInterval;
 let carouselContainer;
@@ -135,31 +132,6 @@ function stopAutoSlide() {
     autoSlideInterval = null;
   }
 }
-
-// Fonction pour détecter les changements de page
-    run(() => {
-          if ($page.url.pathname) {
-            currentKey = $page.url.pathname; // Utiliser l'URL comme clé unique pour chaque page
-          }
-       });
-
-      // Construire l'URL complète
-      const fullUrl = $derived(`${$page.url.origin}${$page.url.pathname}`);
-      const fullUrl2 = $derived($page.url.href);
-      function showUrl() {
-        alert(fullUrl);
-      }
-
-    function isActive(path) {
-        return $page.url.pathname === path;
-      }
-      
-      // Ou pour les routes avec paramètres
-      function isActiveRoute(basePath) {
-        return $page.url.pathname.startsWith(basePath);
-      }
-
-
 
 onMount(() => {
   updateItemsToShow();
