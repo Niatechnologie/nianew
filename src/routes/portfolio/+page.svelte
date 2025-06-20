@@ -14,7 +14,7 @@
                 <div class="stat-label">Client Satisfaits</div>
             </div>
             <div class="stat-card">
-                <div class="stat-number">5+</div>
+                <div class="stat-number">15+</div>
                 <div class="stat-label">Années d'Expérience</div>
             </div>
             <div class="stat-card">
@@ -271,7 +271,8 @@
         }
 
         .stat-card {
-            background: linear-gradient(145deg, rgba(16, 1, 1, 0.934) 0%, rgba(0, 0, 0, 0.8) 100%);
+           
+            background: #2d3748;
             border-radius: 20px;
             padding: 20px;
             text-align: center;
@@ -321,7 +322,7 @@
         }
 
         .project-card {
-            background: linear-gradient(145deg, rgba(30, 30, 30, 0.9) 0%, rgba(0, 0, 0, 0.9) 100%);
+            background: #2d3748;
             border-radius: 25px;
             overflow: hidden;
             transition: all 0.5s ease;
@@ -349,7 +350,7 @@
         }
 
         .project-card:hover {
-            transform: translateY(-15px) scale(1.03);
+            transform: translateY(-15px) scale(1.01);
             box-shadow: 0 25px 50px rgba(220, 38, 38, 0.15);
             border-color: rgba(220, 38, 38, 0.5);
         }
