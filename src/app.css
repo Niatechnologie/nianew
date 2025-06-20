@@ -136,7 +136,7 @@ span.highlight {
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     box-shadow: var(--shadow-sm);
-    padding: 15px 0;
+    padding: 10px 0;
     transition: var(--transition);
     border-bottom: 5px solid red;
 }
@@ -183,9 +183,9 @@ z-index: 100;
     align-items: center;
     gap: 8px;
     font-weight: 700 !important;
-    padding: 20px 0;
+    padding: 15px 0;
     position: relative;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     font-weight: 400;
 }
 
@@ -711,7 +711,7 @@ s
 
 .carousel {
     position: relative;
-    margin-top: 100px;
+    margin-top: 85px;
     height: 550px;
     width: 100%;
     overflow: hidden;

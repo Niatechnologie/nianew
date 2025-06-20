@@ -1,4 +1,4 @@
-<div style="margin-top: 100px;border-top:1px solid red" class="container">
+<div class="container">
         <section class="hero">
             <h1>Notre Portfolio</h1>
             <p>Découvrez nos  solutions innovantes adaptées aux besoins de nos clients.</p>
@@ -219,6 +219,7 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
+            margin-top:85px;
         }
 
         .hero {

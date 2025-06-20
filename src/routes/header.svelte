@@ -20,7 +20,7 @@
                         <li><a href="/formations" class:active={$page.url.pathname === '/formations'}>Formations</a></li>
                         <li><a href="/portfolio" class:active={$page.url.pathname === '/portfolio'}>Portfolio</a></li>
                         <li><a href="/qui-sommes-nous" class:active={$page.url.pathname === '/qui-sommes-nous'}>À propos</a></li>
-                        <li><a href="/contactez-nous" class:active={$page.url.pathname === '/contactez-nous'}>Contact</a></li>
+                        <li><a href="/devis" class:active={$page.url.pathname === '/devis'}>Devis</a></li>
                     </ul>
                 </nav>
                 <div class="hamburger">
