@@ -1027,7 +1027,7 @@
         /* CTA Section */
         .cta {
             padding: 60px 0;
-            background: #979797;
+            background: #6b6b6d;
             text-align: center;
             color: white;
             position: relative;
