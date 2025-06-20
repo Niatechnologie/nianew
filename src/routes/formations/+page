@@ -1,0 +1,431 @@
+
+
+<!-- Hero Section -->
+    <section id="accueil" class="hero">
+        <div class="floating-elements">
+            <div class="floating-element">
+                <i class="fas fa-code" style="font-size: 3rem; color: rgba(255,255,255,0.1);"></i>
+            </div>
+            <div class="floating-element">
+                <i class="fas fa-chart-bar" style="font-size: 3rem; color: rgba(255,255,255,0.1);"></i>
+            </div>
+            <div class="floating-element">
+                <i class="fas fa-palette" style="font-size: 3rem; color: rgba(255,255,255,0.1);"></i>
+            </div>
+        </div>
+        
+        <div class="container">
+            <div class="hero-content">
+                <h1>Transformez Votre Carrière avec Nos Formations d'Excellence</h1>
+                <p class="hero-subtitle">Rejoignez plus de 10 000 apprenants qui ont révolutionné leur parcours professionnel grâce à nos formations certifiantes et innovantes.</p>
+                
+                <div class="hero-buttons">
+                    <a href="#formations" class="btn-primary">
+                        <i class="fas fa-rocket"></i>
+                        Découvrir nos formations
+                    </a>
+                    <a href="#demo" class="btn-secondary">
+                        <i class="fas fa-play"></i>
+                        Voir la démo
+                    </a>
+                </div>
+                
+                <div class="hero-stats">
+                    <div class="hero-stat">
+                        <span class="hero-stat-number">10K+</span>
+                        <span class="hero-stat-label">Étudiants formés</span>
+                    </div>
+                    <div class="hero-stat">
+                        <span class="hero-stat-number">95%</span>
+                        <span class="hero-stat-label">Taux de réussite</span>
+                    </div>
+                    <div class="hero-stat">
+                        <span class="hero-stat-number">4.9/5</span>
+                        <span class="hero-stat-label">Note moyenne</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2 class="section-title">Pourquoi Choisir FormaX ?</h2>
+                <p class="section-subtitle">Découvrez les avantages qui font de nous le leader de la formation professionnelle en ligne.</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3 class="feature-title">Certification Reconnue</h3>
+                    <p class="feature-description">Travaillez sur des projets concrets et constituez un portfolio professionnel impressionnant.</p>
+                </div>
+                
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3 class="feature-title">Flexibilité Totale</h3>
+                    <p class="feature-description">Apprenez à votre rythme, 24h/24 et 7j/7, selon votre emploi du temps.</p>
+                </div>
+                
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <h3 class="feature-title">Insertion Professionnelle</h3>
+                    <p class="feature-description">Accédez à notre réseau d'entreprises partenaires pour booster votre carrière.</p>
+                </div>
+                
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-infinity"></i>
+                    </div>
+                    <h3 class="feature-title">Accès à Vie</h3>
+                    <p class="feature-description">Gardez l'accès à tous les contenus et mises à jour même après votre formation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Formations Section -->
+    <section id="formations" class="formations">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2 class="section-title">Nos Formations d'Excellence</h2>
+                <p class="section-subtitle">Choisissez parmi notre catalogue de formations conçues pour les métiers d'avenir.</p>
+            </div>
+            
+            <div class="formations-filter fade-in">
+                <button class="filter-btn active" data-filter="all">Toutes</button>
+                <button class="filter-btn" data-filter="tech">Tech</button>
+                <button class="filter-btn" data-filter="design">Design</button>
+                <button class="filter-btn" data-filter="business">Business</button>
+            </div>
+            
+            <div class="formations-grid">
+                <div class="formation-card fade-in" data-category="tech">
+                    <div class="card-header dev">
+                        <div class="card-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <div class="card-badge">Populaire</div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Développement Web Full-Stack</h3>
+                        <p class="card-description">Maîtrisez les technologies modernes : React, Node.js, MongoDB, et devenez développeur full-stack recherché.</p>
+                        <ul class="card-features">
+                            <li>6 mois de formation intensive</li>
+                            <li>15 projets pratiques</li>
+                            <li>Certification professionnelle</li>
+                            <li>Stage en entreprise inclus</li>
+                        </ul>
+                        <div class="card-footer">
+                            <div class="card-price">
+                                <span class="price-amount">2 990€</span>
+                                <span class="price-period">ou 3x sans frais</span>
+                            </div>
+                            <button class="card-button">
+                                <i class="fas fa-arrow-right"></i>
+                                S'inscrire
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="formation-card fade-in" data-category="tech">
+                    <div class="card-header data">
+                        <div class="card-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="card-badge">Nouveau</div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Data Science & IA</h3>
+                        <p class="card-description">Explorez l'intelligence artificielle, le machine learning et l'analyse de données avec Python et TensorFlow.</p>
+                        <ul class="card-features">
+                            <li>5 mois de formation</li>
+                            <li>Projets IA réels</li>
+                            <li>Certification Google Cloud</li>
+                            <li>Accompagnement expert</li>
+                        </ul>
+                        <div class="card-footer">
+                            <div class="card-price">
+                                <span class="price-amount">3 490€</span>
+                                <span class="price-period">ou 4x sans frais</span>
+                            </div>
+                            <button class="card-button">
+                                <i class="fas fa-arrow-right"></i>
+                                S'inscrire
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="formation-card fade-in" data-category="design">
+                    <div class="card-header design">
+                        <div class="card-icon">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                        <div class="card-badge">Créatif</div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">UX/UI Design Avancé</h3>
+                        <p class="card-description">Créez des expériences utilisateur exceptionnelles avec Figma, Adobe XD et les dernières méthodologies design.</p>
+                        <ul class="card-features">
+                            <li>4 mois de formation</li>
+                            <li>Portfolio professionnel</li>
+                            <li>Design thinking & prototypage</li>
+                            <li>Projets clients réels</li>
+                        </ul>
+                        <div class="card-footer">
+                            <div class="card-price">
+                                <span class="price-amount">2 790€</span>
+                                <span class="price-period">ou 3x sans frais</span>
+                            </div>
+                            <button class="card-button">
+                                <i class="fas fa-arrow-right"></i>
+                                S'inscrire
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="formation-card fade-in" data-category="business">
+                    <div class="card-header marketing">
+                        <div class="card-icon">
+                            <i class="fas fa-bullhorn"></i>
+                        </div>
+                        <div class="card-badge">ROI Garanti</div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Marketing Digital & Growth</h3>
+                        <p class="card-description">Devenez expert en marketing digital : SEO, SEA, Social Media, Analytics et stratégies de croissance.</p>
+                        <ul class="card-features">
+                            <li>3 mois de formation</li>
+                            <li>Campagnes réelles</li>
+                            <li>Certifications Google & Facebook</li>
+                            <li>Outils pros inclus</li>
+                        </ul>
+                        <div class="card-footer">
+                            <div class="card-price">
+                                <span class="price-amount">1 990€</span>
+                                <span class="price-period">ou 2x sans frais</span>
+                            </div>
+                            <button class="card-button">
+                                <i class="fas fa-arrow-right"></i>
+                                S'inscrire
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="formation-card fade-in" data-category="tech">
+                    <div class="card-header dev">
+                        <div class="card-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <div class="card-badge">Tendance</div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Développement Mobile</h3>
+                        <p class="card-description">Créez des applications mobiles natives et cross-platform avec React Native, Flutter et les APIs modernes.</p>
+                        <ul class="card-features">
+                            <li>5 mois de formation</li>
+                            <li>Apps publiées sur stores</li>
+                            <li>iOS & Android</li>
+                            <li>Monétisation incluse</li>
+                        </ul>
+                        <div class="card-footer">
+                            <div class="card-price">
+                                <span class="price-amount">3 190€</span>
+                                <span class="price-period">ou 3x sans frais</span>
+                            </div>
+                            <button class="card-button">
+                                <i class="fas fa-arrow-right"></i>
+                                S'inscrire
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="formation-card fade-in" data-category="business">
+                    <div class="card-header marketing">
+                        <div class="card-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <div class="card-badge">Exclusif</div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Entrepreneuriat & Startup</h3>
+                        <p class="card-description">Lancez votre startup avec succès : business model, levée de fonds, growth hacking et management d'équipe.</p>
+                        <ul class="card-features">
+                            <li>6 mois d'accompagnement</li>
+                            <li>Pitch deck professionnel</li>
+                            <li>Réseau d'investisseurs</li>
+                            <li>Incubation possible</li>
+                        </ul>
+                        <div class="card-footer">
+                            <div class="card-price">
+                                <span class="price-amount">4 990€</span>
+                                <span class="price-period">ou 5x sans frais</span>
+                            </div>
+                            <button class="card-button">
+                                <i class="fas fa-arrow-right"></i>
+                                S'inscrire
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="temoignages" class="testimonials">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2 class="section-title">Ce Que Disent Nos Étudiants</h2>
+                <p class="section-subtitle">Découvrez les témoignages de ceux qui ont transformé leur carrière avec FormaX.</p>
+            </div>
+            
+            <div class="testimonials-slider fade-in">
+                <div class="testimonials-track" id="testimonialsTrack">
+                    <div class="testimonial">
+                        <div class="testimonial-avatar">M</div>
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star star"></i>
+                            <i class="fas fa-star star"></i>
+                            <i class="fas fa-star star"></i>
+                            <i class="fas fa-star star"></i>
+                            <i class="fas fa-star star"></i>
+                        </div>
+                        <p class="testimonial-text">"FormaX a complètement changé ma vie professionnelle. En 6 mois, je suis passée de comptable à développeuse full-stack dans une startup parisienne. L'accompagnement est exceptionnel !"</p>
+                        <div class="testimonial-author">Marie Dubois</div>
+                        <div class="testimonial-role">Développeuse Full-Stack chez TechStart</div>
+                    </div>
+                    
+                    <div class="testimonial">
+                        <div class="testimonial-avatar">T</div>
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star star"></i>
+                            <i class="fas fa-star star"></i>
+                            <i class="fas fa-star star"></i>
+                            <i class="fas fa-star star"></i>
+                            <i class="fas fa-star star"></i>
+                        </div>
+                        <p class="testimonial-text">"La formation Data Science m'a ouvert les portes de l'IA. Aujourd'hui, je dirige une équipe de data scientists et je gagne 3 fois plus qu'avant. Merci FormaX !"</p>
+                        <div class="testimonial-author">Thomas Chen</div>
+                        <div class="testimonial-role">Lead Data Scientist chez DataCorp</div>
+                    </div>
+                    
+                    <div class="testimonial">
+                        <div class="testimonial-avatar">S</div>
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star star"></i>
+                            <i class="fas fa-star star"></i>
+                            <i class="fas fa-star star"></i>
+                            <i class="fas fa-star star"></i>
+                            <i class="fas fa-star star"></i>
+                        </div>
+                        <p class="testimonial-text">"En tant que designer, je cherchais à me spécialiser en UX. FormaX m'a donné toutes les clés pour exceller dans ce domaine. Je travaille maintenant pour des clients internationaux."</p>
+                        <div class="testimonial-author">Sarah Johnson</div>
+                        <div class="testimonial-role">UX Designer Freelance</div>
+                    </div>
+                </div>
+                
+                <div class="slider-controls">
+                    <div class="slider-dot active" data-slide="0"></div>
+                    <div class="slider-dot" data-slide="1"></div>
+                    <div class="slider-dot" data-slide="2"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2 class="section-title">Questions Fréquentes</h2>
+                <p class="section-subtitle">Trouvez rapidement les réponses à vos questions les plus courantes.</p>
+            </div>
+            
+            <div class="faq-container">
+                <div class="faq-item fade-in">
+                    <div class="faq-question">
+                        <span>Quel est le niveau prérequis pour suivre les formations ?</span>
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Nos formations sont conçues pour être accessibles à tous les niveaux. Pour les formations techniques, des bases en informatique sont recommandées mais pas obligatoires. Nous proposons des modules de mise à niveau pour vous accompagner dès le début.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item fade-in">
+                    <div class="faq-question">
+                        <span>Les formations sont-elles reconnues par l'État ?</span>
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Oui, FormaX est un organisme de formation certifié Qualiopi. Nos formations sont éligibles au CPF et peuvent être prises en charge par votre employeur ou Pôle Emploi. Vous recevrez une certification reconnue par l'industrie.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item fade-in">
+                    <div class="faq-question">
+                        <span>Puis-je suivre la formation tout en travaillant ?</span>
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Absolument ! Nos formations sont conçues pour s'adapter à votre rythme. Vous pouvez étudier le soir, le week-end ou pendant vos pauses. Comptez environ 10-15h par semaine pour un apprentissage optimal.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item fade-in">
+                    <div class="faq-question">
+                        <span>Y a-t-il un accompagnement personnalisé ?</span>
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Chaque étudiant est accompagné par un mentor expert dans son domaine. Vous bénéficiez de sessions individuelles hebdomadaires, d'un suivi personnalisé de vos projets et d'un accès direct à notre communauté d'entraide.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item fade-in">
+                    <div class="faq-question">
+                        <span>Que se passe-t-il après la formation ?</span>
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Nous vous accompagnons dans votre recherche d'emploi avec notre service carrière : optimisation CV/LinkedIn, préparation aux entretiens, mise en relation avec nos entreprises partenaires. 85% de nos étudiants trouvent un emploi dans les 3 mois.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="contact" class="cta">
+        <div class="container">
+            <div class="cta-content fade-in">
+                <h2>Prêt à Transformer Votre Carrière ?</h2>
+                <p>Rejoignez des milliers d'étudiants qui ont déjà fait le choix de l'excellence avec FormaX. Votre nouvelle carrière vous attend !</p>
+                
+                <div class="cta-buttons">
+                    <a href="#" class="btn-white">
+                        <i class="fas fa-phone"></i>
+                        Être rappelé gratuitement
+                    </a>
+                    <a href="#formations" class="btn-secondary">
+                        <i class="fas fa-graduation-cap"></i>
+                        Choisir ma formation
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
