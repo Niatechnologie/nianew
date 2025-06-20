@@ -26,7 +26,7 @@
             <div class="section-header">
                 <h2>Expert Digital & Formation</h2>
                 <p><strong>E-commerce <span style="color:#f00">•</span> Applications Mobiles <span style="color:#f00">•</span> Développement Logiciel <span style="color:#f00">•</span> Développement Web <span style="color:#f00">•</span> Formation VBA & Power BI <span style="color:#f00">•</span> Conseil</strong></p>
-                <p>De l'idée au lancement, nous créons vos solutions digitales complètes. Sites e-commerce performants, applications mobiles natives et hybrides, développement web et logiciel sur mesure, formations pratiques VBA/Power BI pour autonomiser vos équipes dans l'analyse de données.</p>
+                <p>De l'idée au lancement, nous créons vos solutions digitales complètes. Sites e-commerce performants, applications mobiles natives et hybrides, développement web et logiciel sur mesure, formations pratiques Python/VBA/Power BI pour autonomiser vos équipes dans l'analyse de données.</p>
             </div>
             
             <div class="services-grid">
