@@ -154,6 +154,7 @@
             margin-top: 85px;
             padding:20px;
             background: #fff;
+            margin-bottom: 50px;
         }
 
         .header {

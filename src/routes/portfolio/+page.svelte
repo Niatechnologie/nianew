@@ -220,6 +220,7 @@
             margin: 0 auto;
             padding: 20px;
             margin-top:85px;
+            margin-bottom: 50px;
         }
 
         .hero {
@@ -318,7 +319,7 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 35px;
-            margin-top: 30px;
+            margin-top: 40px;
         }
 
         .project-card {
