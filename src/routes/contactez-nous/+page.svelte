@@ -97,6 +97,7 @@
                             <option value="5000€ - 15000€">5 000€ - 15 000€</option>
                             <option value="15000€ - 50000€">15 000€ - 50 000€</option>
                             <option value="> 50000€">Plus de 50 000€</option>
+                            <option value="Proposez moi">Proposez moi</option>
                         </select>
                     </div>
 
