@@ -8,8 +8,9 @@ $(function(){
   Time_l=new TimelineLite();
       
   //Math.random()
-  Time_l.add(TweenLite.from("#red_path,#black_path", 4.0, {drawSVG:"50% 50%",delay:1.5})); 	 
+  Time_l.add(TweenLite.from("#red_path,#red_path2,#black_path", 4.0, {drawSVG:"50% 50%",delay:1.5})); 	 
   Time_l.add(TweenLite.to("#red_path",2.1, {fill:"#ff0000",stroke:"none"}));
+  Time_l.add(TweenLite.to("#red_path2",2.1, {fill:"#ff0000",stroke:"none"}));
   Time_l.add(TweenLite.to("#black_path",2.1, {fill:"#ffffff",stroke:"none"}));
 
   Time_l.add(TweenLite.to("#red_path,#black_path",2.7, {fill:"rgba(0, 203, 202, .4)",opacity:0,stroke:"none",delay:0.5,onComplete:function() {
