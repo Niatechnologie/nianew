@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     if (hamburger) {
         hamburger.addEventListener('click', function() {
-            this.classList.toggle('active');
+           this.classList.toggle('active');
             navLinks.classList.toggle('active');
         });
     }
@@ -71,22 +71,8 @@ document.addEventListener('DOMContentLoaded', function() {
     
     window.addEventListener('scroll', animateOnScroll);
     animateOnScroll(); // Run once on load
-    
-    // Newsletter Form
-    const newsletterForm = document.querySelector('.newsletter-form');
-    if (newsletterForm) {
-        newsletterForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            const email = this.querySelector('input[type="email"]').value;
-            
-            // Here you would typically send the data to a server
-            console.log('Email submitted:', email);
-            
-            // Show success message
-            alert(`Merci pour votre inscription! Vous recevrez nos actualités à ${email}`);
-            this.reset();
-        });
-    }
+   
+
 });
 
 

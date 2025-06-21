@@ -1,6 +1,4 @@
 <script>
-    import { page } from '$app/stores'; // Accéder au store de navigation
-    import logo from '$lib/img/logo_nia.svg';
   import { createEventDispatcher } from 'svelte';
   
   const dispatch = createEventDispatcher();
@@ -129,52 +127,15 @@
   }
 </script>
 
-<svelte:head>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-</svelte:head>
-<!-- Navigation Glassmorphisme -->
-    <header class="glass-nav">
-        <div  class="container">
-            <div id="branding">
-                <a href="/" class="logo">
-                    <img width="220" src="{logo}" alt="">
-                </a>
-            </div>
-            <nav>
-                 <!-- Menu de navigation -->
-                <nav>
-                    <ul class="nav-links">
-                        <li><a href="/" class:active={$page.url.pathname === '/'}>Accueil</a></li>
-                        <li><a href="/solutions" class:active={$page.url.pathname === '/solutions'}>Nos Solutions</a></li>
-                        <li><a href="/formations" class:active={$page.url.pathname === '/formations'}>Formations</a></li>
-                        <li><a href="/portfolio" class:active={$page.url.pathname === '/portfolio'}>Portfolio</a></li>
-                        <li><a href="/qui-sommes-nous" class:active={$page.url.pathname === '/qui-sommes-nous'}>À propos</a></li>
-                        <li><a href="/devis" class:active={$page.url.pathname === '/devis'}>Devis</a></li>
-                    </ul>
-                </nav>
-                <div class="hamburger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </nav>
-        </div>
-        <div class="connexion">
-             <a on:click={openLoginModal} href="#"><i class="bi bi-person-circle"></i> <span>Se connecter </span></a>
-            <ul>
-
-            </ul>
-        </div>
-    </header>
 <svelte:window on:keydown={handleKeydown} />
 
-<!-- <main class="main">
+<main class="main">
   <div class="main-content">
     <h1>Mon Site Web</h1>
     <button class="login-btn" on:click={openLoginModal}>Se Connecter</button>
     <button class="login-btn signup-btn" on:click={openSignupModal}>S'inscrire</button>
   </div>
-</main> -->
+</main>
 
 <!-- Modale de connexion -->
 {#if isModalOpen}
@@ -196,12 +157,12 @@
             </div>
             
             <button class="social-btn google-btn" on:click={loginWithGoogle}>
-              <span class="btn-icon"><img width="22" src="/img/google.svg" alt="" srcset=""></span>
+              <span class="btn-icon">📧</span>
               {isLoginMode ? 'Se connecter avec Google' : "S'inscrire avec Google"}
             </button>
             
             <button class="social-btn facebook-btn" on:click={loginWithFacebook}>
-              <span class="btn-icon"><i style="font-size: 25px;" class="bi bi-facebook"></i></span>
+              <span class="btn-icon">📘</span>
               {isLoginMode ? 'Se connecter avec Facebook' : "S'inscrire avec Facebook"}
             </button>
             
@@ -278,7 +239,25 @@
 {/if}
 
 <style>
-   
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  :global(body) {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background: white;
+    min-height: 100vh;
+  }
+
+  .main {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
   .main-content {
     text-align: center;
     color: #333;
@@ -291,8 +270,8 @@
   }
 
   .login-btn {
-     
-    border: 2px solid yellow;
+    background: #4285f4;
+    border: 2px solid #4285f4;
     color: white;
     padding: 15px 30px;
     font-size: 1.2rem;
@@ -359,11 +338,13 @@
     cursor: pointer;
     width: 50px;
     height: 50px;
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: all 0.3s ease;
-     }
+    background: #f8f9fa;
+  }
 
   .close-btn:hover {
     background: #e9ecef;
@@ -372,12 +353,14 @@
 
   .login-container {
     background: white;
-    padding: 20px;
+    padding: 60px;
+    border-radius: 20px;
+    border: 1px solid #e9ecef;
     text-align: center;
-    max-width: 350px;
+    max-width: 500px;
     width: 90%;
     animation: slideIn 0.5s ease;
-
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
   }
 
   @keyframes slideIn {
@@ -427,9 +410,10 @@
     align-items: center;
     justify-content: center;
     width: 100%;
-    padding: 10px 20px;
+    padding: 15px 20px;
     margin: 15px 0;
     border: none;
+    border-radius: 12px;
     font-size: 1.1rem;
     font-weight: 500;
     cursor: pointer;
@@ -454,14 +438,14 @@
   }
 
   .google-btn {
-    background: #ffffff;
-    color: 333;
-    border: 1px solid #333;
+    background: #4285f4;
+    color: white;
   }
 
   .google-btn:hover {
-    background: #f5f5f6;
-    transform: translateY(-1px);
+    background: #357ae8;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(66, 133, 244, 0.3);
   }
 
   .facebook-btn {
@@ -535,7 +519,7 @@
     width: 100%;
     padding: 15px;
     border: 1px solid #ced4da;
-    border-radius: 4px;
+    border-radius: 8px;
     background: #f8f9fa;
     color: #495057;
     font-size: 1rem;
@@ -558,6 +542,7 @@
     padding: 15px;
     background: linear-gradient(135deg, #4285f4, #357ae8);
     border: none;
+    border-radius: 8px;
     color: white;
     font-size: 1.1rem;
     font-weight: 600;

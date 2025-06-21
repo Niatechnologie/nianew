@@ -444,7 +444,7 @@
             --shadow-heavy: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
         }
         main{
-        margin-top: 85px;
+        margin-top: 83px;
         min-height:200px;
         
         }
