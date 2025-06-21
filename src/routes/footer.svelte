@@ -2,7 +2,7 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
-                    <img width="220" src="img/logo_nia_b.svg" alt="">
+                    <img width="220" src="/img/logo_nia_b2.svg" alt="">
                     <p>Votre partenaire en solutions informatiques et formations professionnelles depuis 2015.</p>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
