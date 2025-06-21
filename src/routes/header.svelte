@@ -1,6 +1,5 @@
 <script>
     import { page } from '$app/stores'; // Accéder au store de navigation
-    import logo from '/img/logo_nia_h.svg';
   import { createEventDispatcher } from 'svelte';
   
   const dispatch = createEventDispatcher();
@@ -137,7 +136,7 @@
         <div  class="container">
             <div id="branding">
                 <a href="/" class="logo">
-                    <img width="260" src="{logo}" alt="">
+                    <img width="260" src="/img/logo_nia_h.svg" alt="">
                 </a>
             </div>
             <nav>
