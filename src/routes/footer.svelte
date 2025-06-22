@@ -15,11 +15,11 @@
                 <div class="footer-col">
                     <h3>Liens rapides</h3>
                     <ul>
-                        <li><a href="index.html">Accueil</a></li>
-                        <li><a href="solutions.html">Nos Solutions</a></li>
-                        <li><a href="training.html">Formations</a></li>
+                        <li><a href="/">Accueil</a></li>
+                        <li><a href="/solutions">Nos Solutions</a></li>
+                        <li><a href="/formations">Formations</a></li>
                         <li><a href="about.html">À propos</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="/contactez-nous">Contact</a></li>
                     </ul>
                 </div>
                 

@@ -1,516 +1,540 @@
- <div class="container">
-        <div class="header fade-in">
-            <h1>Demande de Service Informatique</h1>
-            <p>Décrivez votre besoin et nous vous proposerons la solution adaptée dans les plus brefs délais</p>
+<script>
+  import { onMount } from 'svelte';
+  import { fade, slide } from 'svelte/transition';
+  
+  // Variables du formulaire
+  let nom = '';
+  let email = '';
+  let telephone = '';
+  let sujet = '';
+  let message = '';
+  let showSuccess = false;
+  
+  // Variable pour la carte
+  let mapContainer;
+  let map;
+  
+  // Fonction d'initialisation de la carte
+  function initMap() {
+    if (typeof window !== 'undefined' && window.L && mapContainer) {
+      const L = window.L;
+      
+      // Initialisation de la carte
+      map = L.map(mapContainer).setView([7.6898, -5.0335], 13);
+      
+      // Ajout des tuiles OpenStreetMap
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '© OpenStreetMap contributors'
+      }).addTo(map);
+      
+      // Création d'une icône personnalisée
+      const customIcon = L.divIcon({
+        className: 'custom-marker',
+        html: `
+          <div class="marker-pin">
+            <i class="bi bi-geo-alt-fill"></i>
+          </div>
+        `,
+        iconSize: [30, 30],
+        iconAnchor: [15, 30],
+        popupAnchor: [0, -30]
+      });
+      
+      // Ajout du marqueur
+      L.marker([7.6898, -5.0335], { icon: customIcon })
+        .addTo(map)
+        .bindPopup(`
+          <div class="popup-content2">
+            <h3><i class="bi bi-building"></i> Notre Bureau</h3>
+            <p><i class="bi bi-geo-alt"></i> Abidjan, Region des lagunes<br>Côte d'Ivoire</p>
+          </div>
+        `)
+        .openPopup();
+      
+      // Ajout d'un cercle pour la zone de service
+      L.circle([7.6898, -5.0335], {
+        color: '#667eea',
+        fillColor: '#667eea',
+        fillOpacity: 0.1,
+        radius: 2000
+      }).addTo(map);
+      
+      // Redimensionnement de la carte après un court délai
+      setTimeout(() => {
+        map.invalidateSize();
+      }, 100);
+    } else {
+      // Si Leaflet n'est pas encore chargé, réessayer après un délai
+      setTimeout(initMap, 500);
+    }
+  }
+
+  // Initialisation de Leaflet au montage du composant
+  onMount(() => {
+    // Attendre que le DOM soit prêt et que Leaflet soit chargé
+    const checkAndInit = () => {
+      if (window.L && mapContainer) {
+        initMap();
+      } else {
+        setTimeout(checkAndInit, 100);
+      }
+    };
+    
+    // Démarrer la vérification après un petit délai
+    setTimeout(checkAndInit, 200);
+    
+    // Fonction de nettoyage
+    return () => {
+      if (map) {
+        map.remove();
+      }
+    };
+  });
+  
+  // Fonction de soumission du formulaire
+  function handleSubmit() {
+    // Simulation de l'envoi
+    showSuccess = true;
+    
+    // Réinitialisation du formulaire
+    nom = '';
+    email = '';
+    telephone = '';
+    sujet = '';
+    message = '';
+    
+    // Masquer le message après 5 secondes
+    setTimeout(() => {
+      showSuccess = false;
+    }, 5000);
+  }
+  
+  // Options pour le select
+  const sujets = [
+    { value: 'information', label: 'Demande d\'information', icon: 'bi-info-circle' },
+    { value: 'support', label: 'Support technique', icon: 'bi-tools' },
+    { value: 'commercial', label: 'Question commerciale', icon: 'bi-briefcase' },
+    { value: 'partenariat', label: 'Partenariat', icon: 'bi-handshake' },
+    { value: 'autre', label: 'Autre', icon: 'bi-three-dots' }
+  ];
+</script>
+
+<svelte:head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.1/font/bootstrap-icons.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
+</svelte:head>
+<main>
+<div class="floating-elements">
+  <div class="floating-circle circle-1"></div>
+  <div class="floating-circle circle-2"></div>
+  <div class="floating-circle circle-3"></div>
+</div>
+
+<div class="container">
+  <div class="header">
+    <h1>Contactez-nous</h1>
+    <p>Nous sommes là pour vous aider. N'hésitez pas à nous faire parvenir vos questions.</p>
+  </div>
+
+  <div class="content2">
+    <div class="form-section">
+      <div class="contact-info">
+        <h3><i class="bi bi-info-circle"></i> Informations de contact</h3>
+        <div class="contact-item">
+          <i class="bi bi-geo-alt-fill"></i>
+          <span>Abidjan, Region des lagunes, Côte d'Ivoire</span>
+        </div>
+        <div class="contact-item">
+          <i class="bi bi-telephone-fill"></i>
+          <span>05 54 51 32 99 | +225 07 59 73 84 27</span>
+        </div>
+        <div class="contact-item">
+          <i class="bi bi-envelope-fill"></i>
+          <span>contact@niatechnologie.com</span>
+        </div>
+        <div class="contact-item">
+          <i class="bi bi-clock-fill"></i>
+          <span>Lun - Ven: 8h00 - 17h30</span>
+        </div>
+      </div>
+
+      {#if showSuccess}
+        <div class="success-message" transition:slide>
+          <i class="bi bi-check-circle-fill"></i>
+          Merci ! Votre message a été envoyé avec succès. Nous vous répondrons dans les plus brefs délais.
+        </div>
+      {/if}
+
+      <form on:submit|preventDefault={handleSubmit}>
+        <div class="form-group">
+          <label for="nom">
+            <i class="bi bi-person-fill"></i> Nom complet *
+          </label>
+          <input
+            type="text"
+            id="nom"
+            bind:value={nom}
+            required
+            class:filled={nom}
+          />
         </div>
 
-        <div class="form-container fade-in">
-            <div class="form-info">
-                <h3>📋 Informations importantes</h3>
-                <p>• Temps de réponse moyen : <strong>2-4</strong> heures ouvrables<br>
-                • Support urgent disponible <strong>24/7</strong><br>
-                • Tous les champs marqués d'un <strong>* </strong>sont obligatoires</p>
-            </div>
-
-            <form method="post" id="serviceForm" autocomplete="off">
-                <div class="form-grid">
-                    <div class="form-group">
-                        <label for="nom">Nom complet</label>
-                        <input autocomplete="off" type="text" id="nom" name="nom" required placeholder="Votre nom et prénom">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input autocomplete="off"  type="email" id="email" name="email" required placeholder="votre.email@exemple.com">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="telephone">Téléphone</label>
-                        <input autocomplete="off"  type="tel" id="telephone" name="telephone" required placeholder="+33 6 XX XX XX XX">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="entreprise" class="optional">Entreprise</label>
-                        <input autocomplete="off"  type="text" id="entreprise" name="entreprise" placeholder="Nom de votre entreprise">
-                    </div>
-                </div>
-<hr class="hr">
-                <div class="form-group full-width">
-                    <label>Type de service demandé</label>
-                    <div class="service-type-grid">
-                        <div class="service-option">
-                            <input type="checkbox" id="dev-web" name="services[]" value="Développement Web">
-                            <label for="dev-web" class="service-label">🌐 Développement Web</label>
-                        </div>
-                        <div class="service-option">
-                            <input type="checkbox" id="dev-mobile" name="services[]" value="Application Mobile">
-                            <label for="dev-mobile" class="service-label">📱 Apps Mobile</label>
-                        </div>
-                        <div class="service-option">
-                            <input type="checkbox" id="ecommerce" name="services[]" value="E-commerce">
-                            <label for="ecommerce" class="service-label">🛒 E-commerce</label>
-                        </div>
-                        <div class="service-option">
-                            <input type="checkbox" id="logiciel" name="services[]" value="Logiciel Desktop">
-                            <label for="logiciel" class="service-label">💻 Logiciel Desktop</label>
-                        </div>
-                        <div class="service-option">
-                            <input type="checkbox" id="maintenance" name="services[]" value="Maintenance">
-                            <label for="maintenance" class="service-label">🔧 Maintenance</label>
-                        </div>
-                        <div class="service-option">
-                            <input type="checkbox" id="consulting" name="services[]" value="Consulting">
-                            <label for="consulting" class="service-label">💡 Consulting IT</label>
-                        </div>
-                    </div>
-                </div>
-<hr class="hr">
-                <div class="form-group full-width">
-                    <label>Priorité de la demande</label>
-                    <div class="priority-group">
-                        <div class="priority-option">
-                            <input type="radio" id="urgent" name="priorite" value="Urgent" required>
-                            <label for="urgent" class="priority-label">🔴 Urgent</label>
-                        </div>
-                        <div class="priority-option">
-                            <input type="radio" id="haute" name="priorite" value="Haute">
-                            <label for="haute" class="priority-label">🟡 Haute</label>
-                        </div>
-                        <div class="priority-option">
-                            <input type="radio" id="normale" name="priorite" value="Normale">
-                            <label for="normale" class="priority-label">🟢 Normale</label>
-                        </div>
-                        <div class="priority-option">
-                            <input type="radio" id="basse" name="priorite" value="Basse">
-                            <label for="basse" class="priority-label">🔵 Basse</label>
-                        </div>
-                    </div>
-                </div>
-<hr class="hr">
-                <div class="form-grid">
-                    <div class="form-group">
-                        <label for="budget" class="optional">Budget estimé</label>
-                        <select id="budget" name="budget">
-                            <option value="">Sélectionnez votre budget</option>
-                            <option value="< 1000€">Moins de 1 000€</option>
-                            <option value="1000€ - 5000€">1 000€ - 5 000€</option>
-                            <option value="5000€ - 15000€">5 000€ - 15 000€</option>
-                            <option value="15000€ - 50000€">15 000€ - 50 000€</option>
-                            <option value="> 50000€">Plus de 50 000€</option>
-                            <option value="Proposez moi">Proposez moi</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="delai" class="optional">Délai souhaité</label>
-                        <select id="delai" name="delai">
-                            <option value="">Sélectionnez le délai</option>
-                            <option value="ASAP">Dès que possible</option>
-                            <option value="1 semaine">Dans la semaine</option>
-                            <option value="1 mois">Dans le mois</option>
-                            <option value="3 mois">Dans les 3 mois</option>
-                            <option value="6 mois">Dans les 6 mois</option>
-                            <option value="Flexible">Flexible</option>
-                        </select>
-                    </div>
-                </div>
-
-                <div class="form-group full-width">
-                    <label for="description">Description détaillée du projet</label>
-                    <textarea id="description" name="description" required placeholder="Décrivez votre projet en détail : objectifs, fonctionnalités souhaitées, contraintes techniques, etc."></textarea>
-                </div>
-
-                <div class="form-group full-width">
-                    <label for="fichiers" class="optional">Documents joints</label>
-                    <div class="file-upload">
-                        <input type="file" id="fichiers" name="fichiers[]" multiple accept=".pdf,.doc,.docx,.jpg,.png,.zip">
-                        <label for="fichiers" class="file-upload-label">
-                            📎 Cliquez pour joindre des fichiers<br>
-                            <small>PDF, DOC, Images, ZIP (max 10MB par fichier)</small>
-                        </label>
-                    </div>
-                </div>
-
-                <div class="submit-container">
-                    <button type="submit" class="submit-btn">Envoyer la demande</button>
-                    <button type="reset" class="reset-btn">Réinitialiser</button>
-                </div>
-
-                <div class="required-note">
-                    * Champs obligatoires - Nous nous engageons à répondre dans les 24h
-                </div>
-            </form>
-
-            <div id="successMessage" class="success-message">
-                ✅ Votre demande a été envoyée avec succès ! Nous vous contactons très bientôt.
-            </div>
+        <div class="form-group">
+          <label for="email">
+            <i class="bi bi-envelope-at-fill"></i> Adresse e-mail *
+          </label>
+          <input
+            type="email"
+            id="email"
+            bind:value={email}
+            required
+            class:filled={email}
+          />
         </div>
+
+        <div class="form-group">
+          <label for="telephone">
+            <i class="bi bi-phone-fill"></i> Numéro de téléphone
+          </label>
+          <input
+            type="tel"
+            id="telephone"
+            bind:value={telephone}
+            class:filled={telephone}
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="sujet">
+            <i class="bi bi-tag-fill"></i> Sujet *
+          </label>
+          <select id="sujet" bind:value={sujet} required class:filled={sujet}>
+            <option value="">Sélectionnez un sujet</option>
+            {#each sujets as option}
+              <option value={option.value}>{option.label}</option>
+            {/each}
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="message">
+            <i class="bi bi-chat-dots-fill"></i> Message *
+          </label>
+          <textarea
+            id="message"
+            bind:value={message}
+            placeholder="Décrivez votre demande en détail..."
+            required
+            class:filled={message}
+          ></textarea>
+        </div>
+
+        <button type="submit" class="btn-submit">
+          <i class="bi bi-send-fill"></i> Envoyer le message
+        </button>
+      </form>
     </div>
-     <style>
-     
-         .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            margin-top: 85px;
-            padding:20px;
-            background: #fff;
-        }
+
+    <div class="map-section">
+      <div bind:this={mapContainer} class="map"></div>
+    </div>
+  </div>
+</div>
+</main>
+<style>
+  :global(body) {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    
+  }
+  main{
+    margin-top: 115px;
+    margin-bottom: 40px;
+    
+}
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+  }
+
 
         .header {
             text-align: center;
-            margin-bottom: 50px;
-            position: relative;
+            padding: 30px 0;
+            color: rgb(0, 0, 0);
+            animation: fadeInDown 1s ease-out;
         }
 
-       
         .header h1 {
             font-size: 2.0rem;
-            font-weight: 800;
-            padding: 25px;
-            color: #000 !important;
+            margin-bottom: 20px;
+  
         }
 
         .header p {
             font-size: 1.1rem;
-            color: #64748b;
-            max-width: 600px;
+            opacity: 0.9;
+            max-width: 700px;
             margin: 0 auto;
         }
 
-        .form-container {
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 25px;
-            padding: 30px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
-            position: relative;
-            overflow: hidden;
-            backdrop-filter: blur(10px);
-        }
+  .content2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    min-height: 600px;
+  }
 
-       .hr{
-        margin: 20px -30px;
-        border: 0;
-        border-bottom: 1px solid;
-        border-color: #e3e3e3;
-       }
-        .form-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-            margin-bottom: 30px;
-        }
+  .form-section {
+    padding: 40px;
+    background: white;
+  }
 
-        .form-group {
-            position: relative;
-        }
+  .map-section {
+    position: relative;
+    background: #f8f9fa;
+  }
 
-        .form-group.full-width {
-            grid-column: 1 / -1;
-        }
+  .map {
+    width: 100%;
+    height: 100%;
+    min-height: 600px;
+    position: relative;
+    z-index: 1;
+  }
 
-        label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 600;
-            color: #374151;
-            font-size: 1rem;
-            position: relative;
-        }
+  .form-group {
+    margin-bottom: 25px;
+  }
 
-        label::after {
-            content: '*';
-            color: #ef4444;
-            margin-left: 4px;
-            font-weight: bold;
-        }
+  .form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #333;
+    font-size: 0.95rem;
+  }
 
-        label.optional::after {
-            display: none;
-        }
+  .form-group label i {
+    margin-right: 8px;
+    color: #ff0000;
+  }
 
-        input, select, textarea {
-            width: 100%;
-            padding: 15px 18px;
-            border-radius: 12px;
-            border: none;
-            background: rgba(248, 250, 252, 0.8);
-            color: #374151;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(5px);
-        }
+  .form-group input,
+  .form-group textarea,
+  .form-group select {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #e1e5e9;
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: #fafbfc;
+    box-sizing: border-box;
+  }
 
-        input:focus, select:focus, textarea:focus {
-            outline: none;
-            border-color: #dc2626;
-            background: rgba(255, 255, 255, 0.95);
-            box-shadow: 0 0 20px rgba(220, 38, 38, 0.2);
-            transform: translateY(-2px);
-        }
+  .form-group input:focus,
+  .form-group textarea:focus,
+  .form-group select:focus,
+  .form-group input.filled,
+  .form-group textarea.filled,
+  .form-group select.filled {
+    outline: none;
+    border-color: #f00;
+    background: white;
+    box-shadow: 0 0 0 3px rgba(79, 172, 254, 0.1);
+    transform: translateY(-2px);
+  }
 
-        input::placeholder, textarea::placeholder {
-            color: #9ca3af;
-        }
+  .form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+  }
 
-        textarea {
-            resize: vertical;
-            min-height: 120px;
-        }
+  .btn-submit {
+    width: 100%;
+    padding: 18px;
+    background:#f00;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
 
-        .priority-group {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-            gap: 15px;
-            margin-top: 10px;
-        }
+  .btn-submit:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+  }
 
-        .priority-option {
-            position: relative;
-        }
+  .btn-submit:active {
+    transform: translateY(-1px);
+  }
 
-        .priority-option input[type="radio"] {
-            position: absolute;
-            opacity: 0;
-            width: 0;
-            height: 0;
-        }
+  .btn-submit i {
+    margin-right: 8px;
+  }
 
-        .priority-label {
-            display: block;
-            padding: 12px 20px;
-            border-radius: 10px;
-            background: rgba(248, 250, 252, 0.8);
-            text-align: center;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-weight: 600;
-            color: #64748b;
-        }
+  .contact-info {
+    background: #f00;
+    padding: 30px;
+    color: white;
+    margin-bottom: 30px;
+    border-radius: 15px;
+  }
 
-        .priority-option input[type="radio"]:checked + .priority-label {
-            border-color: #dc2626;
-            border: 1px solid;
-            color: rgb(255, 0, 0);
-            box-shadow: 0 5px 10px rgba(220, 38, 38, 0.1);
-        }
+  .contact-info h3 {
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+  }
 
-        .priority-label:hover {
-            border-color: rgb(220, 38, 38);
-            background: rgba(241, 245, 249, 0.9);
-        }
+  .contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+  }
 
-        .service-type-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-            margin-top: 10px;
-        }
+  .contact-item i {
+    margin-right: 15px;
+    font-size: 1.2rem;
+    width: 24px;
+    text-align: center;
+  }
 
-        .service-option {
-            position: relative;
-        }
+  .success-message {
+    background: #d4edda;
+    color: #155724;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #c3e6cb;
+  }
 
-        .service-option input[type="checkbox"] {
-            position: absolute;
-            opacity: 0;
-            width: 0;
-            height: 0;
-        }
+  .success-message i {
+    margin-right: 10px;
+  }
 
-        .service-label {
-            display: block;
-            padding: 15px;
-            border-radius: 12px;
-            background: rgba(248, 250, 252, 0.8);
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-align: center;
-            font-weight: 500;
-            color: #64748b;
-        }
+  .floating-elements {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+  }
 
-        .service-option input[type="checkbox"]:checked + .service-label {
-            background: linear-gradient(135deg, rgba(220, 38, 38, 0.9) 0%, rgba(185, 28, 28, 0.9) 100%);
-            border-color: #dc2626;
-            color: white;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(220, 38, 38, 0.25);
-        }
+  .floating-circle {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    animation: float 6s ease-in-out infinite;
+  }
 
-        .service-label:hover {
-            border-color: rgba(220, 38, 38, 0.4);
-            background: rgba(241, 245, 249, 0.9);
-        }
+  .circle-1 {
+    width: 80px;
+    height: 80px;
+    top: 20%;
+    left: 10%;
+    animation-delay: 0s;
+  }
 
-        .file-upload {
-            position: relative;
-            display: inline-block;
-            width: 100%;
-        }
+  .circle-2 {
+    width: 120px;
+    height: 120px;
+    top: 60%;
+    right: 10%;
+    animation-delay: 2s;
+  }
 
-        .file-upload input[type="file"] {
-            position: absolute;
-            opacity: 0;
-            width: 100%;
-            height: 100%;
-            cursor: pointer;
-        }
+  .circle-3 {
+    width: 60px;
+    height: 60px;
+    bottom: 20%;
+    left: 20%;
+    animation-delay: 4s;
+  }
 
-        .file-upload-label {
-            display: block;
-            padding: 20px;
-            border-radius: 12px;
-            background: rgba(248, 250, 252, 0.6);
-            text-align: center;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            color: #64748b;
-        }
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+      transform: translateY(-20px) rotate(180deg);
+    }
+  }
 
-        .file-upload:hover .file-upload-label {
-            border-color: #dc2626;
-            background: rgba(241, 245, 249, 0.8);
-            transform: translateY(-2px);
-        }
+  /* Styles pour le marqueur personnalisé */
+  :global(.marker-pin) {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    width: 30px;
+    height: 30px;
+    border-radius: 50% 50% 50% 0;
+    transform: rotate(-45deg);
+    border: 3px solid white;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 
-        .submit-container {
-            text-align: center;
-            margin-top: 40px;
-        }
+  :global(.marker-pin i) {
+    color: white;
+    font-size: 14px;
+    transform: rotate(45deg);
+  }
 
-        .submit-btn {
-            background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
-            color: white;
-            border: none;
-            padding: 18px 50px;
-            font-size: 0.9rem;
-            font-weight: 700;
-            border-radius: 15px;
-            cursor: pointer;
-            transition: all 0.4s ease;
-            position: relative;
-            overflow: hidden;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
+  /* Styles pour la popup */
+  :global(.popup-content2) {
+    text-align: center;
+    padding: 10px;
+  }
 
-        .submit-btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
-            transition: left 0.4s ease;
-            z-index: -1;
-        }
+  :global(.popup-content2 h3) {
+    margin: 0 0 10px 0;
+    color: #333;
+  }
 
-        .submit-btn:hover::before {
-            left: 0;
-        }
+  :global(.popup-content2 p) {
+    margin: 0;
+    color: #666;
+  }
 
-        .submit-btn:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(220, 38, 38, 0.4);
-        }
+  /* Assurer que Leaflet fonctionne correctement */
+  :global(.leaflet-container) {
+    height: 100% !important;
+    width: 100% !important;
+  }
 
-        .reset-btn {
-            background: transparent;
-            color: #64748b;
-            padding: 16px 40px;
-            padding: 16px 40px;
-            padding: 16px 40px;
-            font-size: 1rem;
-            font-weight: 600;
-            border-radius: 15px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            margin-left: 20px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .reset-btn:hover {
-            background: rgba(220, 38, 38, 0.1);
-            border-color: #dc2626;
-            color: #b91c1c;
-            transform: translateY(-3px);
-        }
-
-        .form-info {
-            background: rgba(220, 38, 38, 0.08);
-            border-radius: 12px;
-            border-radius: 12px;
-            padding: 20px;
-            margin-bottom: 30px;
-            color: #374151;
-        }
-
-        .form-info h3 {
-            color: #dc2626;
-            margin-bottom: 10px;
-            font-size: 1.2rem;
-        }
-
-        .required-note {
-            font-size: 0.9rem;
-            color: #6b7280;
-            margin-top: 20px;
-            text-align: center;
-        }
-
-        @media (max-width: 768px) {
-            .header h1 {
-                font-size: 2.2rem;
-            }
-            
-            .form-container {
-                padding: 25px;
-            }
-            
-            .form-grid {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-            
-            .priority-group {
-                grid-template-columns: 1fr;
-            }
-            
-            .service-type-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .reset-btn {
-                margin-left: 0;
-                margin-top: 15px;
-            }
-        }
-
-        .fade-in {
-            animation: fadeIn 0.8s ease-in-out;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .success-message {
-            display: none;
-            background: linear-gradient(135deg, rgba(34, 197, 94, 0.1) 0%, rgba(22, 163, 74, 0.1) 100%);
-            color: #166534;
-            padding: 20px;
-            border-radius: 12px;
-            margin-top: 20px;
-            text-align: center;
-            font-weight: 600;
-        }
-    </style>
+  @media (max-width: 768px) {
+    .content2 {
+      grid-template-columns: 1fr;
+    }
+    
+    .header h1 {
+      font-size: 2rem;
+    }
+    
+    .form-section {
+      padding: 20px;
+    }
+    
+    .map {
+      min-height: 400px;
+    }
+  }
+</style>
