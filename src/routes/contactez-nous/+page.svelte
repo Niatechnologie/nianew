@@ -22,7 +22,7 @@
       const L = window.L;
       
       // Initialisation de la carte
-      map = L.map(mapContainer).setView([7.6898, -5.0335], 13);
+      map = L.map(mapContainer).setView([5.3739286,-3.9935689], 13);
       
       // Ajout des tuiles OpenStreetMap
       L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -43,18 +43,18 @@
       });
       
       // Ajout du marqueur
-      L.marker([7.6898, -5.0335], { icon: customIcon })
+      L.marker([5.3739286,-3.9935689], { icon: customIcon })
         .addTo(map)
         .bindPopup(`
           <div class="popup-content">
             <h3><i class="bi bi-building"></i> Notre Bureau</h3>
-            <p><i class="bi bi-geo-alt"></i> Bouaké, Vallée du Bandama<br>Côte d'Ivoire</p>
+            <p><i class="bi bi-geo-alt"></i> Abidjan, cocody 2 plateaux 12E arr.<br>Côte d'Ivoire</p>
           </div>
         `)
         .openPopup();
       
       // Ajout d'un cercle pour la zone de service
-      L.circle([7.6898, -5.0335], {
+      L.circle([5.3739286,-3.9935689], {
         color: '#667eea',
         fillColor: '#667eea',
         fillOpacity: 0.1,
