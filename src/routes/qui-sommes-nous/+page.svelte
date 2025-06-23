@@ -153,7 +153,7 @@ Dans les années à venir, nous continuerons à élargir notre expertise, à dé
       
         /* Features Section */
         .features {
-            padding: 100px 0;
+            padding: 60px 0;
             background: var(--bg-light);
         }
 
