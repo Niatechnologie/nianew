@@ -9,6 +9,8 @@
   let sujet = '';
   let message = '';
   let showSuccess = false;
+  let showError = false;
+  let isSubmitting = false;
   
   // Variable pour la carte
   let mapContainer;
@@ -44,9 +46,9 @@
       L.marker([7.6898, -5.0335], { icon: customIcon })
         .addTo(map)
         .bindPopup(`
-          <div class="popup-content2">
+          <div class="popup-content">
             <h3><i class="bi bi-building"></i> Notre Bureau</h3>
-            <p><i class="bi bi-geo-alt"></i> Abidjan, Region des lagunes<br>Côte d'Ivoire</p>
+            <p><i class="bi bi-geo-alt"></i> Bouaké, Vallée du Bandama<br>Côte d'Ivoire</p>
           </div>
         `)
         .openPopup();
@@ -91,22 +93,76 @@
     };
   });
   
-  // Fonction de soumission du formulaire
-  function handleSubmit() {
-    // Simulation de l'envoi
-    showSuccess = true;
-    
-    // Réinitialisation du formulaire
-    nom = '';
-    email = '';
-    telephone = '';
-    sujet = '';
-    message = '';
-    
-    // Masquer le message après 5 secondes
-    setTimeout(() => {
-      showSuccess = false;
-    }, 5000);
+  // Fonction de soumission du formulaire avec AJAX
+  async function handleSubmit() {
+    // Validation basique côté client
+    if (!nom.trim() || !email.trim() || !sujet || !message.trim()) {
+      showError = true;
+      setTimeout(() => {
+        showError = false;
+      }, 5000);
+      return;
+    }
+
+    isSubmitting = true;
+    showError = false;
+    showSuccess = false;
+
+    // Préparer les données à envoyer
+    const formData = {
+      nom: nom.trim(),
+      email: email.trim(),
+      telephone: telephone.trim(),
+      sujet: sujet,
+      message: message.trim(),
+      timestamp: new Date().toISOString()
+    };
+
+    try {
+      // Envoi AJAX avec fetch
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify(formData)
+      });
+
+      if (response.ok) {
+        const result = await response.json();
+        
+        // Succès
+        showSuccess = true;
+        
+        // Réinitialisation du formulaire
+        nom = '';
+        email = '';
+        telephone = '';
+        sujet = '';
+        message = '';
+        
+        // Masquer le message après 5 secondes
+        setTimeout(() => {
+          showSuccess = false;
+        }, 5000);
+        
+      } else {
+        // Erreur serveur
+        throw new Error(`Erreur serveur: ${response.status}`);
+      }
+      
+    } catch (error) {
+      console.error('Erreur lors de l\'envoi:', error);
+      showError = true;
+      
+      // Masquer le message d'erreur après 5 secondes
+      setTimeout(() => {
+        showError = false;
+      }, 5000);
+    } finally {
+      isSubmitting = false;
+    }
   }
   
   // Options pour le select
@@ -143,7 +199,7 @@
         <h3><i class="bi bi-info-circle"></i> Informations de contact</h3>
         <div class="contact-item">
           <i class="bi bi-geo-alt-fill"></i>
-          <span>Abidjan, Region des lagunes, Côte d'Ivoire</span>
+          <span>Abidjan, Cocody 2 Plateaux,commissariat du 12e Arr., Côte d'Ivoire</span>
         </div>
         <div class="contact-item">
           <i class="bi bi-telephone-fill"></i>
