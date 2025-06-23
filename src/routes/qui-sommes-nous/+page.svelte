@@ -1,7 +1,17 @@
 
 <svelte:head>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <!-- <script src="/formations.js"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css" integrity="sha512-OTcub78R3msOCtY3Tc6FzeDJ8N9qvQn1Ph49ou13xgA9VsH9+LRxoFU6EqLhW4+PKRfU+/HReXmSZXHEkpYoOA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/greensockjs/src/minified/TweenMax.min.js"></script>
+  <script src="/greensockjs/src/minified/TweenLite.min"></script>
+  <script src="/greensockjs/src/minified/plugins/MorphSVGPlugin.min.js"></script>
+  <script src="/greensockjs/src/minified/plugins/DrawSVGPlugin.min.js"></script>
+  <script src="/gs.js"></script>
+   <script src="/script.js"></script>
+
 </svelte:head>
  <main>
        <!-- Loading Overlay -->
@@ -145,7 +155,13 @@ Dans les années à venir, nous continuerons à élargir notre expertise, à dé
         main{
         margin-top: 83px;
         min-height:200px;
+        padding: 10px;
         
+        }
+        .container{
+            padding:0;
+            margin: 5px;
+            width: 97%;
         }
         .valeurs li{
           margin-bottom: 15px !important;
@@ -153,26 +169,28 @@ Dans les années à venir, nous continuerons à élargir notre expertise, à dé
       
         /* Features Section */
         .features {
-            padding: 60px 0;
+            padding: 40px 0;
             background: var(--bg-light);
+            margin: 0;
         }
 
         .features-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
+            gap: 10px;
             margin-top: 30px;
         }
 
         .feature-card {
-            background: white;
-            padding: 30px;
+            padding: 20px;
             border-radius: 20px;
             text-align: left;
             box-shadow: var(--shadow-light);
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
+            width: auto;
+            margin: 0;
         }
 
         .feature-card::before {
@@ -238,7 +256,7 @@ Dans les années à venir, nous continuerons à élargir notre expertise, à dé
          
             
             .section-title {
-                font-size: 2.5rem;
+                font-size: 1.5rem;
             }
         }
 
