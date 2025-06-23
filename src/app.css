@@ -568,7 +568,9 @@ footer {
         padding: 10px 0;
         background: rgba(255, 255, 255, 0.95);
     }
-s
+    .glass-nav .connexion span{
+        display: none;
+        }
     .logo img {
         width: 150px;
     }
