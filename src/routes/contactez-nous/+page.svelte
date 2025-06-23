@@ -48,15 +48,15 @@
         .bindPopup(`
           <div class="popup-content">
             <h3><i class="bi bi-building"></i> Notre Bureau</h3>
-            <p><i class="bi bi-geo-alt"></i> Abidjan, cocody 2 plateaux 12E arr.<br>Côte d'Ivoire</p>
+            <p><i class="bi bi-geo-alt"></i> Abidjan, cocody 2 plateaux 12e arr.<br>Côte d'Ivoire</p>
           </div>
         `)
         .openPopup();
       
       // Ajout d'un cercle pour la zone de service
       L.circle([5.3739286,-3.9935689], {
-        color: '#667eea',
-        fillColor: '#667eea',
+        color: '#f00',
+        fillColor: '#f00',
         fillOpacity: 0.1,
         radius: 2000
       }).addTo(map);
