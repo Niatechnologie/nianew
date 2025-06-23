@@ -407,8 +407,18 @@
         }
 
         @media (max-width: 768px) {
-            .header h1 {
-                font-size: 2.5rem;
+            .container {
+              padding: 10px;
+        }
+            
+        .header {
+         
+            padding: 20px 0;
+        
+        }
+
+        .header h1 {
+                font-size: 1.5rem;
             }
             
             .services-grid {
@@ -416,7 +426,7 @@
             }
             
             .service-card {
-                padding: 30px 20px;
+                padding: 20px 20px;
             }
 
             .cta-buttons {

@@ -455,6 +455,7 @@
             align-items: center;
             justify-content: center;
             text-align: center;
+            padding-top: 15px;
             position: relative;
             background: var(--primary-gradient);
             overflow: hidden;
@@ -1089,6 +1090,11 @@
 
         /* Responsive Design */
         @media (max-width: 768px) {
+             main{
+            margin-top: 70px;
+    
+            
+            }
             .hero_-buttons {
                 flex-direction: column;
                 align-items: center;
@@ -1107,8 +1113,65 @@
             }
             
             .section-title {
-                font-size: 2.5rem;
+                font-size: 1.7rem;
             }
+
+            .features {
+                padding: 40px 0;
+                background: var(--bg-light);
+            }
+            .container {
+                padding: 10px 0;
+            }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 20px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: var(--shadow-light);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--primary-gradient);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .feature-card:hover::before {
+            transform: scaleX(1);
+        }
+
+       
+
+        .feature-title {
+            font-size: 1.5rem !important;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--text-dark);
+        }
+
         }
 
         /* Animations */
