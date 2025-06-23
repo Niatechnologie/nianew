@@ -156,10 +156,10 @@
                     <span></span>
                     <span></span>
                     <span></span>
-                </div>
+                </div>connexion
             </nav>
         </div>
-        <div class="connexion">
+        <div class="">
              <a on:click={openLoginModal} href="#"><i class="bi bi-person-circle"></i> <span>Se connecter </span></a>
             <ul>
 

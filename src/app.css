@@ -585,6 +585,9 @@ footer {
         .logo #im1 {
            display: none;
         }
+        .connexion i{
+            color:#fff
+        }
     }
     .glass-nav .connexion span{
         display: none;
