@@ -77,6 +77,51 @@
                  </div>
            
             </div>
+            <div class="features-grid">
+               <div class="feature-card fade-in">
+                     <h3 class="feature-title">Notre Vision</h3>
+                     <p style="margin-bottom: 15px;">
+                      Nous aspirons à devenir le partenaire technologique de référence pour les entreprises qui souhaitent se démarquer par l'innovation et l'excellence opérationnelle. Notre vision est de créer un écosystème où la technologie amplifie le potentiel humain et accélère la croissance durable.
+                     </p>
+                      <p style="margin-bottom: 15px;">
+Dans les années à venir, nous continuerons à élargir notre expertise, à développer de nouveaux services et à explorer les technologies émergentes pour rester à l'avant-garde de l'innovation.
+                      </p>
+                    
+                 </div>
+           
+            </div>
+            <div class="features-grid">
+               <div class="feature-card fade-in">
+                     <h3 class="feature-title">Notre Engagement</h3>
+                     <p style="margin-bottom: 15px;">Derrière Nia Technologie se trouve une équipe de passionnés, d'experts et de visionnaires unis par une même ambition : faire de chaque projet une réussite exceptionnelle.</p>
+                     <ul class="valeurs">
+                      <li><i style="color:#f00;font-size: 11px;">1</i> <strong>Envers nos Clients</strong>
+                      Nous nous engageons à fournir des solutions de qualité supérieure, un support exceptionnel et un accompagnement personnalisé tout au long de notre collaboration.
+                      </li>
+                      <li><i style="color:#f00;font-size: 11px;">2</i> <strong>Envers la Communauté</strong>
+                      Nous participons activement au développement de l'écosystème technologique local en partageant nos connaissances, en soutenant les initiatives d'éducation numérique et en contribuant aux projets open source.
+                      </li>
+                      <li><i style="color:#f00;font-size: 11px;">3</i> <strong>Envers l'Environnement</strong>
+                      Nous intégrons les principes de développement durable dans nos pratiques, en privilégiant les solutions éco-responsables et en optimisant l'efficacité énergétique de nos développements.
+                      </li>
+                 
+                     </ul>
+                 </div>
+           
+            </div>
+            <div class="features-grid">
+               <div class="feature-card fade-in">
+                     <h3 class="feature-title">📞 Rejoignez Notre Aventure</h3>
+                     <p style="margin-bottom: 15px;">
+                    Chez Nia Technologie, chaque nouveau client devient un partenaire dans notre quête d'excellence. Nous invitons les entreprises visionnaires à nous rejoindre dans cette aventure technologique passionnante.
+                    Ensemble, construisons l'avenir numérique que vous méritez.
+                    </p>
+                    <hr>
+                   Nia Technologie - Où la Passion Rencontre l'Expertise
+                 </div>
+           
+            </div>
+   
         </div>
     </section>
   
