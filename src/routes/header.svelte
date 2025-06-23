@@ -136,7 +136,8 @@
         <div  class="container">
             <div id="branding">
                 <a href="/" class="logo">
-                    <img width="260" src="/img/logo_nia_h.svg" alt="">
+                    <img id="im1" width="260" src="/img/logo_nia_h.svg" alt="">
+                    <img id="im2" width="260" src="/img/logo_nia_h2.svg" alt="">
                 </a>
             </div>
             <nav>
