@@ -571,8 +571,13 @@ footer {
     .glass-nav .connexion span{
         display: none;
         }
+    .logo {
+        margin-top: 7px;
+    display: inline-block;
+    height: auto;
+    }
     .logo img {
-        width: 150px;
+        width: 230px;
     }
     #logo-anim{
             position: absolute;
