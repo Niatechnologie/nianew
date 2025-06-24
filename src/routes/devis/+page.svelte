@@ -477,12 +477,19 @@
         }
 
         @media (max-width: 768px) {
+            .container {
+            margin-top: 70px;
+            padding:0;
+            margin-bottom: 50px;
+        }
             .header h1 {
-                font-size: 2.2rem;
+                font-size: 1.5rem;
             }
             
             .form-container {
-                padding: 25px;
+             padding: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+                      
             }
             
             .form-grid {
