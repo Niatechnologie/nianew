@@ -160,7 +160,7 @@ Dans les années à venir, nous continuerons à élargir notre expertise, à dé
         }
         .container{
             padding:0;
-            margin: 5px;
+            margin: 5px auto;
             width: 97%;
         }
         .valeurs li{
