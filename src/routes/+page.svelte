@@ -70,7 +70,12 @@
             </div>
         </div>
     </section>
-
+    <section class="abonnement">
+        <div class="container">
+            <h2>Votre Partenaire de Confiance en Solutions Digitales et Formation</h2>
+            <p>Nous combinons expertise technique et pédagogie pour propulser votre entreprise vers le succès numérique.</p>
+        </div>
+    </section>
     <!-- Formations Highlights -->
     <section class="training-highlight">
         <div class="container">
