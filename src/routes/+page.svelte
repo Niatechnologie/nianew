@@ -91,10 +91,10 @@
                         <h3 class="tarif_plan-name">Essentiel</h3>
                         <div class="tarif_price-container">
                             <div class="tarif_price" id="price-essentiel">
-                                <span class="tarif_price-currency">€</span>20
+                                <span class="tarif_price-currency">Fcfa</span>20
                                 <span class="tarif_price-period">/mois</span>
                             </div>
-                            <div class="tarif_price-yearly" id="yearly-essentiel">soit 240€/an</div>
+                            <div class="tarif_price-yearly" id="yearly-essentiel">soit 240 000/an</div>
                         </div>
                         <div class="tarif_plan-description">
                             Toutes les fonctionnalités de base :
@@ -127,14 +127,14 @@
 
                     <!-- Plan Avancé -->
                     <div class="tarif_pricing-card tarif_featured">
-                        <div class="tarif_popular-badge">Formule la plus populaire</div>
+                        <div class="tarif_popular-badge">Plus populaire</div>
                         <h3 class="tarif_plan-name">Avancé</h3>
                         <div class="tarif_price-container">
                             <div class="tarif_price" id="price-avance">
-                                <span class="tarif_price-currency">€</span>32
+                                <span class="tarif_price-currency">Fcfa</span>32
                                 <span class="tarif_price-period">/mois</span>
                             </div>
-                            <div class="tarif_price-yearly" id="yearly-avance">soit 390€/an</div>
+                            <div class="tarif_price-yearly" id="yearly-avance">soit 390 000/an</div>
                         </div>
                         <div class="tarif_plan-description">
                             Toutes les fonctionnalités de la formule Essentiel et :
@@ -174,10 +174,10 @@
                         <h3 class="tarif_plan-name">Illimité</h3>
                         <div class="tarif_price-container">
                             <div class="tarif_price" id="price-illimite">
-                                <span class="tarif_price-currency">€</span>47.5
+                                <span class="tarif_price-currency">Fcfa</span>47.5
                                 <span class="tarif_price-period">/mois</span>
                             </div>
-                            <div class="tarif_price-yearly" id="yearly-illimite">soit 570€/an (2 mois offerts)</div>
+                            <div class="tarif_price-yearly" id="yearly-illimite">soit 570 000/an (2 mois offerts)</div>
                         </div>
                         <div class="tarif_plan-description">
                             Toutes les fonctionnalités de la formule Avancé et :
