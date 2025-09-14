@@ -1003,17 +1003,17 @@ footer {
 }
 
 /* Abonnement */
-   ._tarif_pricing-container {
+   .tarif_pricing-container {
             max-width: 1100px;
             margin: 0 auto;
         }
 
-        ._tarif_pricing-header {
+        .tarif_pricing-header {
             text-align: center;
             margin-bottom: 2rem;
         }
 
-        ._tarif_toggle-container {
+        .tarif_toggle-container {
             display: flex;
             align-items: center;
             justify-content: center;
@@ -1021,7 +1021,7 @@ footer {
             margin-bottom: 3rem;
         }
 
-        ._tarif_toggle-switch {
+        .tarif_toggle-switch {
             position: relative;
             width: 60px;
             height: 30px;
@@ -1031,7 +1031,7 @@ footer {
             transition: all 0.3s ease;
         }
 
-        ._tarif_toggle-slider {
+        .tarif_toggle-slider {
             position: absolute;
             top: 3px;
             left: 3px;
@@ -1042,20 +1042,20 @@ footer {
             transition: all 0.3s ease;
         }
 
-        ._tarif_toggle-active ._tarif_toggle-slider {
+        .tarif_toggle-active .tarif_toggle-slider {
             transform: translateX(30px);
         }
 
-        ._tarif_toggle-text {
+        .tarif_toggle-text {
             font-weight: 500;
             color: #6b7280;
         }
 
-        ._tarif_toggle-text.active {
+        .tarif_toggle-text.active {
             color: #ff0000;
         }
 
-        ._tarif_offer-badge {
+        .tarif_offer-badge {
             background: linear-gradient(135deg, #ff0000, #a855f7);
             color: white;
             font-size: 0.75rem;
@@ -1064,14 +1064,14 @@ footer {
             margin-left: 0.5rem;
         }
 
-        ._tarif_pricing-grid {
+        .tarif_pricing-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 2rem;
             align-items: stretch;
         }
 
-        ._tarif_pricing-card {
+        .tarif_pricing-card {
             background: white;
             border: 2px solid #e5e7eb;
             border-radius: 20px;
@@ -1081,22 +1081,22 @@ footer {
             text-align: center;
         }
 
-        ._tarif_pricing-card:hover {
+        .tarif_pricing-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 30px rgba(124, 58, 237, 0.1);
         }
 
-        ._tarif_pricing-card._tarif_featured {
+        .tarif_pricing-card.tarif_featured {
             border: 2px solid #ff0000;
             position: relative;
             transform: scale(1.05);
         }
 
-        ._tarif_pricing-card._tarif_featured:hover {
+        .tarif_pricing-card.tarif_featured:hover {
             transform: scale(1.05) translateY(-5px);
         }
 
-        ._tarif_popular-badge {
+        .tarif_popular-badge {
             position: absolute;
             top: -12px;
             left: 50%;
@@ -1109,7 +1109,7 @@ footer {
             font-weight: 600;
         }
 
-        ._tarif_plan-name {
+        .tarif_plan-name {
             font-size: 1.5rem;
             font-weight: 600;
             color: #c4b5fd;
@@ -1117,76 +1117,76 @@ footer {
             text-transform: capitalize;
         }
 
-        ._tarif_pricing-card._tarif_featured ._tarif_plan-name {
+        .tarif_pricing-card.tarif_featured .tarif_plan-name {
             color: #ff0000;
         }
 
-        ._tarif_price-container {
+        .tarif_price-container {
             margin-bottom: 1rem;
         }
 
-        ._tarif_price {
+        .tarif_price {
             font-size: 4rem;
             font-weight: 800;
             color: #1a1a1a;
             line-height: 1;
         }
 
-        ._tarif_price-currency {
+        .tarif_price-currency {
             font-size: 1.5rem;
             vertical-align: top;
         }
 
-        ._tarif_price-period {
+        .tarif_price-period {
             font-size: 1rem;
             color: #6b7280;
             margin-left: 0.5rem;
         }
 
-        ._tarif_price-yearly {
+        .tarif_price-yearly {
             font-size: 0.85rem;
             color: #9ca3af;
             margin-top: 0.5rem;
         }
 
-        ._tarif_plan-description {
+        .tarif_plan-description {
             color: #6b7280;
             margin-bottom: 2rem;
             font-size: 0.9rem;
         }
 
-        ._tarif_features-section {
+        .tarif_features-section {
             text-align: left;
             margin-bottom: 2rem;
         }
 
-        ._tarif_feature-item {
+        .tarif_feature-item {
             display: flex;
             align-items: flex-start;
             margin-bottom: 0.75rem;
             font-size: 0.9rem;
         }
 
-        ._tarif_feature-item ._tarif_check {
+        .tarif_feature-item .tarif_check {
             color: #ff0000;
             margin-right: 0.75rem;
             margin-top: 0.1rem;
             font-weight: bold;
         }
 
-        ._tarif_feature-number {
+        .tarif_feature-number {
             color: #ff0000;
             font-weight: 700;
             margin-right: 0.5rem;
             min-width: 2rem;
         }
 
-        ._tarif_feature-text {
+        .tarif_feature-text {
             color: #374151;
             line-height: 1.4;
         }
 
-        ._tarif_show-all-features {
+        .tarif_show-all-features {
             color: #9ca3af;
             font-size: 0.85rem;
             text-align: center;
@@ -1196,11 +1196,11 @@ footer {
             background: none;
         }
 
-        ._tarif_show-all-features:hover {
+        .tarif_show-all-features:hover {
             color: #ff0000;
         }
 
-        ._tarif_cta-button {
+        .tarif_cta-button {
             width: 100%;
             background: linear-gradient(135deg, #ff0000, #9c0000);
             color: white;
@@ -1214,21 +1214,21 @@ footer {
             margin-top: auto;
         }
 
-        ._tarif_cta-button:hover {
+        .tarif_cta-button:hover {
             transform: translateY(-2px);
             box-shadow: 0 8px 25px rgba(255, 1, 1, 0.3);
         }
 
         @media (max-width: 768px) {
-            ._tarif_pricing-card._tarif_featured {
+            .tarif_pricing-card.tarif_featured {
                 transform: none;
             }
             
-            ._tarif_pricing-card._tarif_featured:hover {
+            .tarif_pricing-card.tarif_featured:hover {
                 transform: translateY(-5px);
             }
             
-            ._tarif_price {
+            .tarif_price {
                 font-size: 3rem;
             }
         }

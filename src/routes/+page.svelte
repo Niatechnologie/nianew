@@ -72,147 +72,147 @@
     </section>
     <section class="abonnement">
         <div class="container">
-            <div class="_tarif_pricing-container">
-                <div class="_tarif_pricing-header">
-                    <div class="_tarif_toggle-container">
-                        <span class="_tarif_toggle-text" id="monthly-text">Mensuel</span>
-                        <div class="_tarif_toggle-switch _tarif_toggle-active" id="toggle-switch" onclick="toggleBilling()">
-                            <div class="_tarif_toggle-slider"></div>
+            <div class="tarif_pricing-container">
+                <div class="tarif_pricing-header">
+                    <div class="tarif_toggle-container">
+                        <span class="tarif_toggle-text" id="monthly-text">Mensuel</span>
+                        <div class="tarif_toggle-switch tarif_toggle-active" id="toggle-switch" onclick="toggleBilling()">
+                            <div class="tarif_toggle-slider"></div>
                         </div>
-                        <span class="_tarif_toggle-text active" id="annual-text">Annuel</span>
-                        <span class="_tarif_offer-badge">2 Mois offerts</span>
+                        <span class="tarif_toggle-text active" id="annual-text">Annuel</span>
+                        <span class="tarif_offer-badge">2 Mois offerts</span>
                     </div>
                 </div>
 
-                <div class="_tarif_pricing-grid">
+                <div class="tarif_pricing-grid">
                     <!-- Plan Essentiel -->
-                    <div class="_tarif_pricing-card">
-                        <h3 class="_tarif_plan-name">Essentiel</h3>
-                        <div class="_tarif_price-container">
-                            <div class="_tarif_price" id="price-essentiel">
-                                <span class="_tarif_price-currency">€</span>20
-                                <span class="_tarif_price-period">/mois</span>
+                    <div class="tarif_pricing-card">
+                        <h3 class="tarif_plan-name">Essentiel</h3>
+                        <div class="tarif_price-container">
+                            <div class="tarif_price" id="price-essentiel">
+                                <span class="tarif_price-currency">€</span>20
+                                <span class="tarif_price-period">/mois</span>
                             </div>
-                            <div class="_tarif_price-yearly" id="yearly-essentiel">soit 240€/an</div>
+                            <div class="tarif_price-yearly" id="yearly-essentiel">soit 240€/an</div>
                         </div>
-                        <div class="_tarif_plan-description">
+                        <div class="tarif_plan-description">
                             Toutes les fonctionnalités de base :
                         </div>
-                        <div class="_tarif_features-section">
-                            <div class="_tarif_feature-item">
-                                <span class="_tarif_check">✓</span>
-                                <span class="_tarif_feature-text">Petite boutique en ligne</span>
+                        <div class="tarif_features-section">
+                            <div class="tarif_feature-item">
+                                <span class="tarif_check">✓</span>
+                                <span class="tarif_feature-text">Petite boutique en ligne</span>
                             </div>
-                            <div class="_tarif_feature-item">
-                                <span class="_tarif_feature-number">25</span>
-                                <span class="_tarif_feature-text">Produits</span>
+                            <div class="tarif_feature-item">
+                                <span class="tarif_feature-number">25</span>
+                                <span class="tarif_feature-text">Produits</span>
                             </div>
-                            <div class="_tarif_feature-item">
-                                <span class="_tarif_feature-number">5</span>
-                                <span class="_tarif_feature-text">Catégories</span>
+                            <div class="tarif_feature-item">
+                                <span class="tarif_feature-number">5</span>
+                                <span class="tarif_feature-text">Catégories</span>
                             </div>
-                            <div class="_tarif_feature-item">
-                                <span class="_tarif_feature-number">2</span>
-                                <span class="_tarif_feature-text">Prestataires de paiement</span>
+                            <div class="tarif_feature-item">
+                                <span class="tarif_feature-number">2</span>
+                                <span class="tarif_feature-text">Prestataires de paiement</span>
                             </div>
-                            <div class="_tarif_feature-item">
-                                <span class="_tarif_feature-number">0%</span>
-                                <span class="_tarif_feature-text">Commission sur les ventes</span>
+                            <div class="tarif_feature-item">
+                                <span class="tarif_feature-number">0%</span>
+                                <span class="tarif_feature-text">Commission sur les ventes</span>
                             </div>
                         </div>
-                        <button class="_tarif_show-all-features">+ Voir toutes les fonctionnalités</button>
-                        <button class="_tarif_cta-button" onclick="selectPlan('essentiel')">Mettre à niveau</button>
+                        <button class="tarif_show-all-features">+ Voir toutes les fonctionnalités</button>
+                        <button class="tarif_cta-button" onclick="selectPlan('essentiel')">Mettre à niveau</button>
                     </div>
 
                     <!-- Plan Avancé -->
-                    <div class="_tarif_pricing-card _tarif_featured">
-                        <div class="_tarif_popular-badge">Formule la plus populaire</div>
-                        <h3 class="_tarif_plan-name">Avancé</h3>
-                        <div class="_tarif_price-container">
-                            <div class="_tarif_price" id="price-avance">
-                                <span class="_tarif_price-currency">€</span>32
-                                <span class="_tarif_price-period">/mois</span>
+                    <div class="tarif_pricing-card tarif_featured">
+                        <div class="tarif_popular-badge">Formule la plus populaire</div>
+                        <h3 class="tarif_plan-name">Avancé</h3>
+                        <div class="tarif_price-container">
+                            <div class="tarif_price" id="price-avance">
+                                <span class="tarif_price-currency">€</span>32
+                                <span class="tarif_price-period">/mois</span>
                             </div>
-                            <div class="_tarif_price-yearly" id="yearly-avance">soit 390€/an</div>
+                            <div class="tarif_price-yearly" id="yearly-avance">soit 390€/an</div>
                         </div>
-                        <div class="_tarif_plan-description">
+                        <div class="tarif_plan-description">
                             Toutes les fonctionnalités de la formule Essentiel et :
                         </div>
-                        <div class="_tarif_features-section">
-                            <div class="_tarif_feature-item">
-                                <span class="_tarif_check">✓</span>
-                                <span class="_tarif_feature-text">Boutique en ligne complète</span>
+                        <div class="tarif_features-section">
+                            <div class="tarif_feature-item">
+                                <span class="tarif_check">✓</span>
+                                <span class="tarif_feature-text">Boutique en ligne complète</span>
                             </div>
-                            <div class="_tarif_feature-item">
-                                <span class="_tarif_feature-number">100</span>
-                                <span class="_tarif_feature-text">Produits</span>
+                            <div class="tarif_feature-item">
+                                <span class="tarif_feature-number">100</span>
+                                <span class="tarif_feature-text">Produits</span>
                             </div>
-                            <div class="_tarif_feature-item">
-                                <span class="_tarif_feature-number">50</span>
-                                <span class="_tarif_feature-text">Catégories</span>
+                            <div class="tarif_feature-item">
+                                <span class="tarif_feature-number">50</span>
+                                <span class="tarif_feature-text">Catégories</span>
                             </div>
-                            <div class="_tarif_feature-item">
-                                <span class="_tarif_check">✓</span>
-                                <span class="_tarif_feature-text">Gestion des frais de port</span>
+                            <div class="tarif_feature-item">
+                                <span class="tarif_check">✓</span>
+                                <span class="tarif_feature-text">Gestion des frais de port</span>
                             </div>
-                            <div class="_tarif_feature-item">
-                                <span class="_tarif_check">✓</span>
-                                <span class="_tarif_feature-text">Campagnes d'emailing</span>
+                            <div class="tarif_feature-item">
+                                <span class="tarif_check">✓</span>
+                                <span class="tarif_feature-text">Campagnes d'emailing</span>
                             </div>
-                            <div class="_tarif_feature-item">
-                                <span class="_tarif_check">✓</span>
-                                <span class="_tarif_feature-text">Prestataires de paiement illimités</span>
+                            <div class="tarif_feature-item">
+                                <span class="tarif_check">✓</span>
+                                <span class="tarif_feature-text">Prestataires de paiement illimités</span>
                             </div>
                         </div>
-                        <button class="_tarif_show-all-features">+ Voir toutes les fonctionnalités</button>
-                        <button class="_tarif_cta-button" onclick="selectPlan('avance')">Mettre à niveau</button>
+                        <button class="tarif_show-all-features">+ Voir toutes les fonctionnalités</button>
+                        <button class="tarif_cta-button" onclick="selectPlan('avance')">Mettre à niveau</button>
                     </div>
 
                     <!-- Plan Illimité -->
-                    <div class="_tarif_pricing-card">
-                        <h3 class="_tarif_plan-name">Illimité</h3>
-                        <div class="_tarif_price-container">
-                            <div class="_tarif_price" id="price-illimite">
-                                <span class="_tarif_price-currency">€</span>47.5
-                                <span class="_tarif_price-period">/mois</span>
+                    <div class="tarif_pricing-card">
+                        <h3 class="tarif_plan-name">Illimité</h3>
+                        <div class="tarif_price-container">
+                            <div class="tarif_price" id="price-illimite">
+                                <span class="tarif_price-currency">€</span>47.5
+                                <span class="tarif_price-period">/mois</span>
                             </div>
-                            <div class="_tarif_price-yearly" id="yearly-illimite">soit 570€/an (2 mois offerts)</div>
+                            <div class="tarif_price-yearly" id="yearly-illimite">soit 570€/an (2 mois offerts)</div>
                         </div>
-                        <div class="_tarif_plan-description">
+                        <div class="tarif_plan-description">
                             Toutes les fonctionnalités de la formule Avancé et :
                         </div>
-                        <div class="_tarif_features-section">
-                            <div class="_tarif_feature-item">
-                                <span class="_tarif_check">✓</span>
-                                <span class="_tarif_feature-text">E-commerce illimité</span>
+                        <div class="tarif_features-section">
+                            <div class="tarif_feature-item">
+                                <span class="tarif_check">✓</span>
+                                <span class="tarif_feature-text">E-commerce illimité</span>
                             </div>
-                            <div class="_tarif_feature-item">
-                                <span class="_tarif_check">✓</span>
-                                <span class="_tarif_feature-text">Produits illimités</span>
+                            <div class="tarif_feature-item">
+                                <span class="tarif_check">✓</span>
+                                <span class="tarif_feature-text">Produits illimités</span>
                             </div>
-                            <div class="_tarif_feature-item">
-                                <span class="_tarif_check">✓</span>
-                                <span class="_tarif_feature-text">Catégories illimitées</span>
+                            <div class="tarif_feature-item">
+                                <span class="tarif_check">✓</span>
+                                <span class="tarif_feature-text">Catégories illimitées</span>
                             </div>
-                            <div class="_tarif_feature-item">
-                                <span class="_tarif_check">✓</span>
-                                <span class="_tarif_feature-text">Statistiques avancées</span>
+                            <div class="tarif_feature-item">
+                                <span class="tarif_check">✓</span>
+                                <span class="tarif_feature-text">Statistiques avancées</span>
                             </div>
-                            <div class="_tarif_feature-item">
-                                <span class="_tarif_check">✓</span>
-                                <span class="_tarif_feature-text">Accès multi-utilisateurs</span>
+                            <div class="tarif_feature-item">
+                                <span class="tarif_check">✓</span>
+                                <span class="tarif_feature-text">Accès multi-utilisateurs</span>
                             </div>
-                            <div class="_tarif_feature-item">
-                                <span class="_tarif_check">✓</span>
-                                <span class="_tarif_feature-text">Assistance prioritaire</span>
+                            <div class="tarif_feature-item">
+                                <span class="tarif_check">✓</span>
+                                <span class="tarif_feature-text">Assistance prioritaire</span>
                             </div>
-                            <div class="_tarif_feature-item">
-                                <span class="_tarif_check">✓</span>
-                                <span class="_tarif_feature-text">Contact téléphonique</span>
+                            <div class="tarif_feature-item">
+                                <span class="tarif_check">✓</span>
+                                <span class="tarif_feature-text">Contact téléphonique</span>
                             </div>
                         </div>
-                        <button class="_tarif_show-all-features">+ Voir toutes les fonctionnalités</button>
-                        <button class="_tarif_cta-button" onclick="selectPlan('illimite')">Mettre à niveau</button>
+                        <button class="tarif_show-all-features">+ Voir toutes les fonctionnalités</button>
+                        <button class="tarif_cta-button" onclick="selectPlan('illimite')">Mettre à niveau</button>
                     </div>
                 </div>
             </div>
