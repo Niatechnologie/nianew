@@ -2,16 +2,16 @@
    // Tarifs mensuels et annuels
         const pricing = {
             essentiel: {
-                monthly: 20,
-                yearly: 200 // 20 * 10 (12 mois - 2 offerts)
+                monthly: 20000,
+                yearly: 200000 // 20 * 10 (12 mois - 2 offerts)
             },
             avance: {
-                monthly: 32,
-                yearly: 320 // 32 * 10 (12 mois - 2 offerts)
+                monthly: 32000,
+                yearly: 320000 // 32 * 10 (12 mois - 2 offerts)
             },
             illimite: {
-                monthly: 57,
-                yearly: 570 // 57 * 10 (12 mois - 2 offerts)
+                monthly: 57000,
+                yearly: 570000 // 57 * 10 (12 mois - 2 offerts)
             }
         };
 
@@ -42,12 +42,12 @@
                 if (isAnnual) {
                     // Affichage annuel - prix mensuel équivalent
                     const monthlyEquivalent = pricing[plan].yearly / 10;
-                    priceElement.innerHTML = `<span class="tarif_price-currency">€</span>${monthlyEquivalent}<span class="tarif_price-period">/mois</span>`;
-                    yearlyElement.textContent = `soit ${pricing[plan].yearly}€/an (2 mois offerts)`;
+                    priceElement.innerHTML = `<span class="tarif_price-currency"> Fcfa</span>${monthlyEquivalent}<span class="tarif_price-period">/mois</span>`;
+                    yearlyElement.textContent = `soit ${pricing[plan].yearly} Fcfa/an (2 mois offerts)`;
                 } else {
                     // Affichage mensuel
-                    priceElement.innerHTML = `<span class="tarif_price-currency">€</span>${pricing[plan].monthly}<span class="tarif_price-period">/mois</span>`;
-                    yearlyElement.textContent = `soit ${pricing[plan].monthly * 12}€/an`;
+                    priceElement.innerHTML = `<span class="tarif_price-currency"> Fcfa</span>${pricing[plan].monthly}<span class="tarif_price-period">/mois</span>`;
+                    yearlyElement.textContent = `soit ${pricing[plan].monthly * 12} Fcfa/an`;
                 }
             });
         }
